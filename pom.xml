@@ -19,6 +19,7 @@
         <module>consumer-feign-order80</module>
         <module>hystrix-dashboard-9001</module>
         <module>cloud-gateway-gateway9527</module>
+        <module>cloud-config-center3344</module>
     </modules>
     <packaging>pom</packaging>
     <!--
@@ -38,6 +39,7 @@
         <hystrix-version>2.2.9.RELEASE</hystrix-version>
         <hystrix-dashboard-version>1.4.7.RELEASE</hystrix-dashboard-version>
         <gateway-version>3.0.3</gateway-version>
+        <cloud-config-version>3.0.4</cloud-config-version>
     </properties>
     <!--
         子模块继承  作用：锁定版本+子module 不用再写groupId和version
@@ -97,6 +99,15 @@
                 <artifactId>spring-cloud-starter-gateway</artifactId>
                 <version>${gateway-version}</version>
             </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-config-server
+             配置中心
+             -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-config-server</artifactId>
+                <version>${cloud-config-version}</version>
+            </dependency>
+
             <!--
                 mybatis-plus
             -->
