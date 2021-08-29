@@ -1,0 +1,6 @@
+com\urchin\springcloud\config\log4j2Test.class
+com\urchin\springcloud\PaymentMain8002.class
+com\urchin\springcloud\controller\PaymentController.class
+com\urchin\springcloud\service\PaymentService.class
+com\urchin\springcloud\service\impl\PaymentServiceImpl.class
+com\urchin\springcloud\dao\PaymentDao.class

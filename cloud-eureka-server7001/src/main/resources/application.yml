@@ -1,0 +1,18 @@
+server:
+  port: 7001
+eureka:
+  instance:
+    hostname: eureka7001.com #eureka 服务端实例集群
+  client:
+    #false表明自己不会向服务中心注册自己
+    register-with-eureka: false
+    #false表明自己就是服务中心  维护服务实例  并不会检索服务
+    fetch-registry: false
+    service-url:
+      defaultZone: http://euerka7002.com:7002/eureka/,http://euerka7003.com:7003/eureka/   #相互注册 相互守望
+      #设置玉eureka server的交互地址查询服务和注册服务   都需要依赖这个地址
+#      defaultZone: http://euerka7001.com:7001/eureka/  #相互注册 相互守望
+
+  server:
+    enable-self-preservation: false #禁用AP保护机制  保证不可用服务及时清除
+    eviction-interval-timer-in-ms: 2000   #修改 心跳保护时间

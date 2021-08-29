@@ -1,0 +1,6 @@
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\config\FeignConfig.java
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\service\paymentFeignService\PaymentFeignService.java
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\service\paymentFallbackService\PaymentFallbackServiceImpl.java
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\controller\OrderOpenFeignController.java
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\OrderOpenFeignMain80.java
+D:\Personal engineering project\evolution\consumer-feign-order80\src\main\java\com\urchin\cloud\config\JavaConfig.java
