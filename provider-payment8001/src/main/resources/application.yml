@@ -1,22 +1,5 @@
-server:
-  port: 8001
-# spring cloud 服务端配置
-eureka:
-  client:
-    #true 是否将自己注册到注册中心
-    register-with-eureka: true
-    #true 是否从 Eureka主持中心抓取已有的注册信息 默认为 true 单节点无所谓 集群必须设置为true 才能配合ribbon使用负载均衡
-    fetch-registry: true
-    service-url:
-      defaultZone: http://euerka7001.com:7001/eureka/,http://euerka7002.com:7002/eureka/, http://euerka7003.com:7003/eureka/
-         #设置玉eureka server的交互地址查询服务和注册服务   都需要依赖这个地址
-  instance:
-      instance-id: payment8001  #主机名
-      prefer-ip-address: true   #显示IP
-      # 心跳检测 和持续时间
-      # 开发时候间隔小一些 保证剔除关闭后 注册中心及时剔除服务
-      lease-renewal-interval-in-seconds: 1  #euerka 客户端收到最后一次心跳等待的时间上限 默认30秒
-      lease-expiration-duration-in-seconds: 2  #euerka 服务端收到最后一次心跳等待的时间上限 默认90秒
+
+
     # 熔断配置
 hystrix:
   dashboard:

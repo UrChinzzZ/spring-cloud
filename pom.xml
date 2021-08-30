@@ -19,7 +19,7 @@
         <module>consumer-feign-order80</module>
         <module>hystrix-dashboard-9001</module>
         <module>cloud-gateway-gateway9527</module>
-        <module>cloud-config-center3344</module>
+        <module>urchin-config-3344</module>
     </modules>
     <packaging>pom</packaging>
     <!--
@@ -39,7 +39,8 @@
         <hystrix-version>2.2.9.RELEASE</hystrix-version>
         <hystrix-dashboard-version>1.4.7.RELEASE</hystrix-dashboard-version>
         <gateway-version>3.0.3</gateway-version>
-        <cloud-config-version>3.0.4</cloud-config-version>
+        <cloud-config-version>2.2.8.RELEASE</cloud-config-version>
+        <cloud-config-client-version>2.2.8.RELEASE</cloud-config-client-version>
     </properties>
     <!--
         子模块继承  作用：锁定版本+子module 不用再写groupId和version
@@ -106,6 +107,14 @@
                 <groupId>org.springframework.cloud</groupId>
                 <artifactId>spring-cloud-config-server</artifactId>
                 <version>${cloud-config-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-config
+            配置中心客户端
+            -->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-config</artifactId>
+                <version>${cloud-config-client-version}</version>
             </dependency>
 
             <!--
