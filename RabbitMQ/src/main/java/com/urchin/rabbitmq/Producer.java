@@ -10,18 +10,20 @@ import java.util.concurrent.TimeoutException;
 /**
  * @author urchin
  * @Description 消息生产者
- * @PROJECT_NAME provider-Hystrix-payment8001
+ * @PROJECT_NAME evolution
  * @create 2021-09-14 22:54
  */
 public class Producer {
     // 队列名称
-    public static final String QUEUE_NAME="第一条队列";
+    public static final String QUEUE_NAME="第二条队列";
     // 发送消息
     public static void main(String[] args) throws IOException, TimeoutException {
         //创建工厂
         ConnectionFactory factory=new ConnectionFactory();
         //工厂IP  链接MQ队列
-        factory.setHost("http://192.168.1.106:15672");
+        factory.setHost("192.168.1.106");
+        //设置端口
+        factory.setPort(Integer.parseInt("5672"));
         // 设置用户名
         factory.setUsername("urchin");
         //设置密码
@@ -47,7 +49,9 @@ public class Producer {
          * 3.路由的Key值
          * 4.发送的消息  消息需要二进制
          */
-        channel.basicPublish(null,null,null,message.getBytes());
+        String urchin = "";
+
+        channel.basicPublish(urchin,QUEUE_NAME,null,message.getBytes());
         System.out.println("消息已经发送");
     }
 }
