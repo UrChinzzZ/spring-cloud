@@ -20,6 +20,7 @@
         <module>hystrix-dashboard-9001</module>
         <module>cloud-gateway-gateway9527</module>
         <module>urchin-config-3344</module>
+        <module>RabbitMQ</module>
     </modules>
     <packaging>pom</packaging>
     <!--
@@ -41,6 +42,8 @@
         <gateway-version>3.0.3</gateway-version>
         <cloud-config-version>2.2.8.RELEASE</cloud-config-version>
         <cloud-config-client-version>2.2.8.RELEASE</cloud-config-client-version>
+        <rabbitMQ-version>5.7.3</rabbitMQ-version>
+        <common-io-version>2.4</common-io-version>
     </properties>
     <!--
         子模块继承  作用：锁定版本+子module 不用再写groupId和version
@@ -72,7 +75,20 @@
                 <type>pom</type>
                 <scope>import</scope>
             </dependency>
-<!--            mysql驱动-->
+            <!-- https://mvnrepository.com/artifact/com.rabbitmq/amqp-client -->
+            <dependency>
+                <groupId>com.rabbitmq</groupId>
+                <artifactId>amqp-client</artifactId>
+                <version>${rabbitMQ-version}</version>
+            </dependency>
+            <!-- https://mvnrepository.com/artifact/commons-io/commons-io -->
+            <dependency>
+                <groupId>commons-io</groupId>
+                <artifactId>commons-io</artifactId>
+               <version>${common-io-version}</version>
+            </dependency>
+
+            <!--            mysql驱动-->
             <dependency>
                 <groupId>mysql</groupId>
                 <artifactId>mysql-connector-java</artifactId>
