@@ -1,4 +1,4 @@
-package com.urchin.rabbitmq.util.consumer;
+package com.urchin.rabbitmq.consumer;
 
 import com.rabbitmq.client.CancelCallback;
 import com.rabbitmq.client.Channel;
@@ -6,7 +6,9 @@ import com.rabbitmq.client.DeliverCallback;
 import com.urchin.rabbitmq.util.RabbitMqUtils;
 
 import java.io.IOException;
-import java.util.concurrent.*;
+import java.util.concurrent.ExecutorService;
+import java.util.concurrent.Executors;
+import java.util.concurrent.TimeoutException;
 
 /**
  * @author urchin
@@ -14,7 +16,7 @@ import java.util.concurrent.*;
  * @PROJECT_NAME provider-Hystrix-payment8001
  * @create 2021-09-26 22:25
  */
-public class Work01  {
+public class ConsumerWork01 {
     // 队列名称
     public static final String QUEUE_NAME="第二条队列";
 
@@ -34,6 +36,19 @@ public class Work01  {
         CancelCallback cancelCallback= consumerTag->{
             System.out.println("消息消费被取消，回调参数");
         };
-        channel.basicConsume(QUEUE_NAME,true,deliverCallback,cancelCallback);
+        ExecutorService executorService=Executors.newFixedThreadPool(3);
+        for (int i=0;i<10;i++){
+        executorService.submit(new Runnable() {
+            @Override
+            public void run() {
+                try {
+                    System.out.println(Thread.currentThread().getName()+"正在执行任务");
+                    channel.basicConsume(QUEUE_NAME,true,deliverCallback,cancelCallback);
+                } catch (IOException e) {
+                }
+            }
+        });
+        }
+//        channel.basicConsume(QUEUE_NAME,true,deliverCallback,cancelCallback);
     }
 }
