@@ -21,6 +21,9 @@
         <module>cloud-gateway-gateway9527</module>
         <module>urchin-config-3344</module>
         <module>RabbitMQ</module>
+        <module>alibaba-provider-payment9001</module>
+        <module>alibaba-provider-payment9002</module>
+        <module>albaba-nacos-consumer-order91</module>
     </modules>
     <packaging>pom</packaging>
     <!--
@@ -44,12 +47,58 @@
         <cloud-config-client-version>2.2.8.RELEASE</cloud-config-client-version>
         <rabbitMQ-version>5.7.3</rabbitMQ-version>
         <common-io-version>2.4</common-io-version>
+        <zipkin-version>2.2.8.RELEASE</zipkin-version>
+        <nacos-discovery-version>2.2.5.RELEASE</nacos-discovery-version>
+<!--        <nacos-config-version>2.1.5.RELEASE</nacos-config-version>-->
+<!--        <nacos-client-version>2.0.0-BETA</nacos-client-version>-->
     </properties>
     <!--
         子模块继承  作用：锁定版本+子module 不用再写groupId和version
     -->
     <dependencyManagement>
         <dependencies>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-alibaba-dependencies</artifactId>
+                <version>2.1.0.RELEASE</version>
+                <type>pom</type>
+                <scope>import</scope>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos-discovery-version}</version>
+            </dependency>
+<!--            nacos 2.0组件-->
+
+<!--
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-discovery</artifactId>
+                <version>${nacos-discovery-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.cloud</groupId>
+                <artifactId>spring-cloud-starter-alibaba-nacos-config</artifactId>
+                <version>${nacos-config-version}</version>
+                <exclusions>
+                    <exclusion>
+                        <groupId>com.alibaba.nacos</groupId>
+                        <artifactId>nacos-client</artifactId>
+                    </exclusion>
+                </exclusions>
+            </dependency>
+            <dependency>
+                <groupId>com.alibaba.nacos</groupId>
+                <artifactId>nacos-client</artifactId>
+                <version>${nacos-client-version}</version>
+            </dependency> -->
             <!--spring boot 2.3.10-->
             <dependency>
                 <groupId>org.springframework.boot</groupId>
@@ -108,6 +157,13 @@
                 <artifactId>spring-cloud-starter-netflix-hystrix</artifactId>
                 <version>${hystrix-version}</version>
             </dependency>
+            <!--        sleuth +zipKin 链路监控-->
+            <dependency>
+                <groupId>org.springframework.cloud</groupId>
+                <artifactId>spring-cloud-starter-zipkin</artifactId>
+                <version>${zipkin-version}</version>
+            </dependency>
+
             <!-- https://mvnrepository.com/artifact/org.springframework.cloud/spring-cloud-starter-gateway
                网关
             -->

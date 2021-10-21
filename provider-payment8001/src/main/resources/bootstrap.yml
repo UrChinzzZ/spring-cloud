@@ -26,6 +26,14 @@ spring:
         label: main #配置文件分支
         name: config-single-client  #配置文件所在根目录
         profile: dev
+#      sleuth +zipKin 链路监控
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  sleuth:
+#    采样率 在 1~0之间  1最大
+    sampler:
+      probability: 1
+
 # 暴露监控端点
 management:
   endpoints:

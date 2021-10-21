@@ -3,6 +3,13 @@ server:
 spring:
   application:
     name: cloud-order-openfeign-service #\u6D88\u8D39\u670D\u52A1
+    #      sleuth +zipKin 链路监控
+  zipkin:
+    base-url: http://127.0.0.1:9411
+  sleuth:
+      #    采样率 在 1~0之间 1表示全部采集
+    sampler:
+      probability: 1
 eureka:
   client:
     #true 是否将自己注册到注册中心

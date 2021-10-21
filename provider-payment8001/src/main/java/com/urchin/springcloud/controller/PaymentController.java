@@ -148,4 +148,8 @@ public class PaymentController {
         return result;
         
     }
+    @GetMapping(value = "/payment/zipkin")
+    public String paymentZipkin(){
+        return "我是 zipkin 链路监控 ！！";
+    }
 }

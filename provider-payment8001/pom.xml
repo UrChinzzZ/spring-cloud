@@ -17,6 +17,12 @@
             <version>${project.version}</version>
             <scope>compile</scope>
         </dependency>
+        <!--        sleuth +zipKin 链路监控-->
+        <dependency>
+            <groupId>org.springframework.cloud</groupId>
+            <artifactId>spring-cloud-starter-zipkin</artifactId>
+        </dependency>
+<!--        springBoot 整合web组件-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-web</artifactId>

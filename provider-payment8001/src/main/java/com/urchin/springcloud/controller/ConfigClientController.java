@@ -12,15 +12,15 @@ import org.springframework.web.bind.annotation.RestController;
  * @PROJECT_NAME provider-Hystrix-payment8001
  * @create 2021-08-29 22:04
  */
-@RestController
-@RequestMapping("configController")
-@RefreshScope
-public class ConfigClientController {
- @Value("${config.info}")
-    private  String configInfo;
- @GetMapping("/configInfo")
-    public String getConfigInfo()
-     {
-         return configInfo;
-     }
-}
+//@RestController
+//@RequestMapping("configController")
+//@RefreshScope
+//public class ConfigClientController {
+// @Value("${config.info}")
+//    private  String configInfo;
+// @GetMapping("/configInfo")
+//    public String getConfigInfo()
+//     {
+//         return configInfo;
+//     }
+//}
