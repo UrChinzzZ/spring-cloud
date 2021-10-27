@@ -1,0 +1,17 @@
+#nacos 配置
+server:
+  port: 3377
+spring:
+  application:
+    name: nacos-config-client
+  cloud:
+    nacos:
+      discovery:
+        server-addr: http://192.168.1.106:8848   #nacos地址
+      config:
+        server-addr: http://192.168.1.106:8848   #nacos地址
+        file-extension: yaml
+#        group: TEST_GROUP #测试分组
+        group: DEV_GROUP #测试分组
+#        namespace: 46524d78-5d98-4e84-9470-8c9d34a0e96c #测试空间
+        namespace: 599dc21f-7645-4559-b569-2cc1aa681dab #开发空间
