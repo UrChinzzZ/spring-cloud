@@ -7,6 +7,6 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: http://192.168.1.106:8848
+        server-addr: http://192.168.1.13:1111
   # 注册到微服务提供者名称中
 service-url: http://nacos-payment-provider

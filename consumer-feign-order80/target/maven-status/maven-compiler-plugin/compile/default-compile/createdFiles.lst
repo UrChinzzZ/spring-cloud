@@ -1,6 +1,0 @@
-com\urchin\cloud\service\paymentFallbackService\PaymentFallbackServiceImpl.class
-com\urchin\cloud\config\FeignConfig.class
-com\urchin\cloud\config\JavaConfig.class
-com\urchin\cloud\OrderOpenFeignMain80.class
-com\urchin\cloud\service\paymentFeignService\PaymentFeignService.class
-com\urchin\cloud\controller\OrderOpenFeignController.class
