@@ -10,13 +10,13 @@ spring:
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.1.13:1111   #nacos地址
+        server-addr: 192.168.208.131:1111   #nacos地址
         group: DEV_GROUP #开发分组
-        namespace: 6ab7a358-2885-4adb-bf83-50e1ca9b51c8
+        namespace: a76cb8aa-52c5-4a67-ba98-d854aed04aba
     sentinel:
       transport:
 #        监控地址
-        dashboard: 192.168.1.13:8858
+        dashboard: 192.168.208.131:8858
         # 默认端口  8719  如果被占用 自定加一端口
         port: 8719
 
