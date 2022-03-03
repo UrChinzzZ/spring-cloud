@@ -1,0 +1,40 @@
+#nacos 配置
+server:
+  port: 83
+spring:
+  profiles:
+    active: dev  #测试坏境
+  application:
+    name: nacos-order-consumer
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 192.168.208.131:1111   #nacos地址
+        group: DEV_GROUP #开发分组
+        namespace: a76cb8aa-52c5-4a67-ba98-d854aed04aba
+    sentinel:
+      transport:
+#        监控地址
+        dashboard: 192.168.208.131:8858
+        # 默认端口  8719  如果被占用 自定加一端口
+        port: 8719
+      datasource:
+        ds1:
+          nacos:
+            server-addr: 192.168.208.131:1111
+            dataId: cloudalibaba-sentinel-service
+            groupId: DEFAULT_GROUP
+            data-type: json
+            rule-type: flow
+
+
+  # 注册到微服务提供者名称中
+service-url: http://nacos-payment-provider
+management:
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+#feign:
+#  sentinel:
+#    enabled: true

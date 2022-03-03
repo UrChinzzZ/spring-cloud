@@ -5,21 +5,18 @@ spring:
   profiles:
     active: dev
   application:
-    name: urchin
+    name: nacos-config-client
   cloud:
     nacos:
       discovery:
-        server-addr: 192.168.1.13:1111   #nacos地址
-        group: DEV_GROUP #开发分组
-        namespace: 6ab7a358-2885-4adb-bf83-50e1ca9b51c8
+        server-addr: 192.168.208.131:1111 #nacos地址
+        namespace: a76cb8aa-52c5-4a67-ba98-d854aed04aba #开发空间
+        group: DEV_GROUP #测试分组
       config:
-        enabled: true
-        server-addr: 192.168.1.13:1111   #nacos地址
-        group: DEV_GROUP #开发分组
-        namespace: 6ab7a358-2885-4adb-bf83-50e1ca9b51c8
+        server-addr: 192.168.208.131:1111 #nacos地址
+        namespace: a76cb8aa-52c5-4a67-ba98-d854aed04aba #开发空间
+        group: DEV_GROUP #测试分组
         file-extension: yaml
-        prefix: urchin-config
-#        #测试空间
-#        group: TEST_GROUP #开发分组
-#        namespace: "a8b22543-e945-4bfa-aa5f-8efdc055090d"  #开发空间
-#        prefix:
+#        group: TEST_GROUP #测试分组
+        prefix: urchin
+#        namespace: 46524d78-5d98-4e84-9470-8c9d34a0e96c #测试空间

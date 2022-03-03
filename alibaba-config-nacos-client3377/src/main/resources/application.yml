@@ -1,4 +1,4 @@
 #spring:
 #  profiles:
-#    active: dev  #测试坏境
-#   active: test   #开发环境
+##    active: test   #测试坏境
+#   active: dev   #开发环境

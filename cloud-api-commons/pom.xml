@@ -11,7 +11,7 @@
 
     <artifactId>cloud-api-commons</artifactId>
     <dependencies>
-<!--        引入自己定义的API 通用包 使用公共类-->
+        <!--        引入自己定义的API 通用包 使用公共类-->
         <dependency>
             <groupId>org.projectlombok</groupId>
             <artifactId>lombok</artifactId>
